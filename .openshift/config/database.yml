@@ -1,33 +1,36 @@
-sqlite: &sqlite
-  adapter: sqlite3
-  database: db/<%= Rails.env %>.sqlite3
-
 mysql: &mysql
   adapter: mysql2
-  database: "<%=ENV['OPENSHIFT_APP_NAME']%>"
+  database: blog
   username: "<%=ENV['OPENSHIFT_MYSQL_DB_USERNAME']%>"
   password: "<%=ENV['OPENSHIFT_MYSQL_DB_PASSWORD']%>"
   host:     <%=ENV['OPENSHIFT_MYSQL_DB_HOST']%>
   port:     <%=ENV['OPENSHIFT_MYSQL_DB_PORT']%>
-
-postgresql: &postgresql
-  adapter: postgresql
-  database: <%=ENV['OPENSHIFT_APP_NAME']%>
-  username: <%=ENV['OPENSHIFT_POSTGRESQL_DB_USERNAME']%>
-  password: <%=ENV['OPENSHIFT_POSTGRESQL_DB_PASSWORD']%>
-  host:     <%=ENV['OPENSHIFT_POSTGRESQL_DB_HOST']%>
-  port:     <%=ENV['OPENSHIFT_POSTGRESQL_DB_PORT']%>
-  min_messages: ERROR
-  reconnect: false
+  #Descomentar y comentar para ejecutar entorno de manera local
+  #username: "<%=ENV["MYSQL_DB_USERNAME"] %>"
+  #password: "<%=ENV["MYSQL_DB_PASSWORD"] %>"
+  #host: localhost
+  #port: 3000
 
 defaults: &defaults
   pool: 5
   timeout: 5000
   encoding: utf8
-  <<: *<%= ENV['RAILS_DB'] || "sqlite" %>
+  <<: *<%= ENV['RAILS_DB'] || "mysql" %>
 
 development:
-  <<: *defaults
+    pool: 5
+    timeout: 5000
+    encoding: utf8
+    adapter: mysql2
+    database: blog
+    #Configurar tu nombre de usuario y password en el bashrc
+    # sudo atom ~/.bashrc
+    # export MYSQL_DB_USERNAME="username"
+    # export MYSQL_DB_PASSWORD="password"
+    username: "<%=ENV["MYSQL_DB_USERNAME"] %>"
+    password: "<%=ENV["MYSQL_DB_PASSWORD"] %>"
+    host: localhost
+    port: 3000
 
 test: &test
   <<: *defaults

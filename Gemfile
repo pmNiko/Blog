@@ -17,9 +17,10 @@ gem 'rake', '~> 0.9.6'
 # $ rhc env set BUNDLE_WITHOUT="development test postgresql"
 #
 group :development, :test do
-  gem 'sqlite3'
-  gem 'minitest'
+  gem 'mysql2'
   gem 'thor'
+  gem 'better_errors' #Gem for better error page
+  gem 'binding_of_caller'
 end
 
 # Add support for the MySQL
@@ -27,9 +28,9 @@ group :production, :mysql do
   gem 'mysql2'
 end
 
-group :production, :postgresql do
-  gem 'pg'
-end
+#group :production, :postgresql do
+#  gem 'pg'
+#end
 
 ### / OpenShift changes
 
@@ -65,4 +66,3 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
