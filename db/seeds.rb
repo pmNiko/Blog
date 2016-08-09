@@ -3,6 +3,7 @@ martin = User.new(
   :password              => "nikolas89",
   :password_confirmation => "nikolas89"
 )
+martin.add_role :admin
 martin.save!
 
 fabi = User.new(

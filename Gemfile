@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.4'
 gem 'devise', '~> 3.5.6'
 gem 'rails_admin', '~> 0.8.1'
+gem 'rolify', '~> 5.1'
+#add stylesheets of the app
+gem 'bootstrap-sass'
 ### OpenShift Online changes:
 
 # Fix the conflict with the system 'rake':
@@ -18,6 +21,7 @@ gem 'rake', '~> 0.9.6'
 # $ rhc env set BUNDLE_WITHOUT="development test postgresql"
 #
 group :development, :test do
+  gem 'rails_layout'
   gem 'mysql2'
   gem 'thor'
   gem 'better_errors' #Gem for better error page

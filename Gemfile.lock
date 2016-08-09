@@ -28,6 +28,8 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    autoprefixer-rails (6.4.0.1)
+      execjs
     bcrypt (3.1.11)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -35,6 +37,9 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.3.5)
+      autoprefixer-rails (>= 5.0.0.1)
+      sass (>= 3.2.19)
     builder (3.2.2)
     coderay (1.1.1)
     coffee-rails (4.0.1)
@@ -117,6 +122,7 @@ GEM
       remotipart (~> 1.0)
       safe_yaml (~> 1.0)
       sass-rails (>= 4.0, < 6)
+    rails_layout (1.0.29)
     railties (4.1.4)
       actionpack (= 4.1.4)
       activesupport (= 4.1.4)
@@ -128,6 +134,7 @@ GEM
     remotipart (1.2.1)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
+    rolify (5.1.0)
     safe_yaml (1.0.4)
     sass (3.2.19)
     sass-rails (4.0.3)
@@ -170,6 +177,7 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   binding_of_caller
+  bootstrap-sass
   coffee-rails (~> 4.0.0)
   devise (~> 3.5.6)
   jbuilder (~> 2.0)
@@ -177,7 +185,9 @@ DEPENDENCIES
   mysql2
   rails (= 4.1.4)
   rails_admin (~> 0.8.1)
+  rails_layout
   rake (~> 0.9.6)
+  rolify (~> 5.1)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring
