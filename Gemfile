@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.4'
 gem 'devise', '~> 3.5.6'
+gem 'rails_admin', '~> 0.8.1'
 ### OpenShift Online changes:
 
 # Fix the conflict with the system 'rake':
