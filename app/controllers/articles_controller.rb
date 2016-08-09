@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.all
+    @articles = current_user.articles
   end
 
   def show
@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
     if @article.update(article_params)
       redirect_to @article
     else
-      render 'edit'      
+      render 'edit'
     end
   end
 

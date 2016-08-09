@@ -1,13 +1,31 @@
-joeUser = User.new(
-  :email                 => "joe@example.com",
-  :password              => "12345678",
-  :password_confirmation => "12345678"
+martin = User.new(
+  :email                 => "martin@example.com",
+  :password              => "nikolas89",
+  :password_confirmation => "nikolas89"
 )
-joeUser.save!
+martin.save!
 
-janeUser = User.new(
-  :email                 => "jane@example.com",
-  :password              => "12345678",
-  :password_confirmation => "12345678"
+fabi = User.new(
+  :email                 => "fabi@example.com",
+  :password              => "fabiana94",
+  :password_confirmation => "fabiana94"
 )
-janeUser.save!
+fabi.save!
+
+
+
+for i in 0..5
+  Article.create!({
+    title: "Post number #{i}",
+    text: "My #{i} post!",
+    author: fabi
+  });
+end
+
+for i in 0..5
+  Article.create!({
+    title: "Post number #{i}",
+    text: "My #{i} post!",
+    author: martin
+  });
+end
