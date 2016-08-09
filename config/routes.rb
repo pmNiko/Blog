@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root "articles#index"
+  resources :articles
 
+=begin
   get '/articles',
       to: 'articles#index',
       as: 'articles'
@@ -14,5 +16,5 @@ Rails.application.routes.draw do
       as: 'article'
   delete '/articles/:id',
       to: 'articles#destroy'
-  #resource :articles
+=end
 end

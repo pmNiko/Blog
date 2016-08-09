@@ -8,13 +8,34 @@ class ArticlesController < ApplicationController
   end
 
   def new
+    @article = Article.new
   end
 
   def create
     @article = Article.new(article_params)
-    @article.save
-    redirect_to @article
+    begin
+      @article.save!
+      redirect_to @article
+    rescue ActiveRecord::RecordInvalid
+      render 'new'
+    end
   end
+
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  def update
+    @article = Article.find(params[:id])
+    begin
+      @article.update!(article_params)
+      redirect_to @article
+    rescue ActiveRecord::RecordInvalid
+      render 'edit'
+    end
+  end
+
+
 
   def destroy
     @article = Article.find(params[:id])
