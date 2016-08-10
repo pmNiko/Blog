@@ -4,6 +4,7 @@ gem 'rails', '4.1.4'
 gem 'devise', '~> 3.5.6'
 gem 'rails_admin', '~> 0.8.1'
 gem 'rolify', '~> 5.1'
+gem 'pundit', '~> 1.1.0'
 #add stylesheets of the app
 gem 'bootstrap-sass'
 ### OpenShift Online changes:

@@ -7,6 +7,11 @@
   <%= @article.text %>
 </p>
 
-<%= link_to 'Edit', edit_article_path(@article) %>
-<%= link_to 'Delete', article_path(@article), method: :delete %>
+<% if policy(@article).edit? %>
+  <%= link_to 'Edit', edit_article_path(@article) %>
+<% end %>
+<% if policy(@article).destroy? %>
+  <%= link_to 'Delete', article_path(@article), method: :delete %>
+<% end %>
+
 <%= link_to 'Back to Index', articles_path %>

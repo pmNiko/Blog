@@ -6,4 +6,6 @@
   </h3>
 <% end %>
 
-<%= link_to 'New article', new_article_path %>
+<% if policy(Article).new? %>
+  <%= link_to 'New article', new_article_path %>
+<% end %>
