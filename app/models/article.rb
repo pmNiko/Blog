@@ -4,4 +4,5 @@ class Article < ActiveRecord::Base
   validates :author, presence: true
     #Va a tener una referencia a un autor a travez de la clase User
   belongs_to :author, class_name: 'User'
+  has_and_belongs_to_many :categories
 end

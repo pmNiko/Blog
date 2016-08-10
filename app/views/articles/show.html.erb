@@ -1,5 +1,11 @@
 <h1> <%= @article.title %> </h1>
 
+<% @article.categories.each do |category| %>
+  <span class="label label-primary">
+    <%= category.name %>
+  </span>
+<% end %>
+
 <h3> By <%= @article.author.email %></h3>
 
 <p>
