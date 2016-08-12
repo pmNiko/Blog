@@ -13,20 +13,21 @@ fabi = User.new(
 )
 fabi.save!
 
+Category.create!(name: 'OOP')
+Category.create!(name: 'Programing')
+Category.create!(name: 'Smalltalk')
+Category.create!(name: 'Inforrmation')
+Category.create!(name: 'News')
+Category.create!(name: 'Notice')
 
-
-for i in 0..5
+for i in 1..2
   Article.create!({
     title: "Post number #{i}",
     text: "My #{i} post!",
-    author: fabi
+    author: martin,
+    :categories => Category.where(:name =>['OOP', 'Programing'])
   });
 end
 
-for i in 0..5
-  Article.create!({
-    title: "Post number #{i}",
-    text: "My #{i} post!",
-    author: martin
-  });
-end
+Article.create!(title: 'Hi everybody!',  text: "This is Jane's first post", author: fabi,
+                :categories => Category.where(:name =>['OOP', 'Smalltalk']));

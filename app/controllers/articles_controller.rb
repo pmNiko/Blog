@@ -16,6 +16,7 @@ class ArticlesController < ApplicationController
   def new
     authorize Article
     @article = Article.new
+    @categories = Category.all
   end
 
   def create
@@ -33,6 +34,7 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
+    @categories = Category.all
     authorize @article
   end
 
@@ -59,7 +61,7 @@ class ArticlesController < ApplicationController
 
   private
     def article_params
-      params.require(:article).permit(:title, :text)
+      params.require(:article).permit(:title, :text, :name, :category_ids => [])
     end
 
     def redirect_if_not_author(article)

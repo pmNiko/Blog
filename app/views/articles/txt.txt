@@ -1,0 +1,5 @@
+<%= f.collection_select :category_ids, @categories, :id, :name, {}, {:multiple => true} %>
+<%= f.collection_select :category_ids, @categories.order(:name), :id, :name, {},
+{:selected => @categories}
+%>
+<%= f.collection_check_boxes :category_ids, @categories.order(:name), :id, :name %>

@@ -18,9 +18,12 @@
       <% end %>
       <div class="panel panel-default">
         <div class="panel-heading">
-          <p id="text_center">
-            category
-          </p>
+            <p id="text_center">
+              <%= f.label 'Categorias'%>
+            </p>
+            <p id="text_center">
+              <%= f.collection_check_boxes :category_ids, @categories.order(:name), :id, :name %>
+            </p>
         </div>
         <div class="panel-body">
         <p id="text_center">
