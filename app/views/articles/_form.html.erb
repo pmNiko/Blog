@@ -22,8 +22,8 @@
               <%= f.label 'Categorias'%>
             </p>
             <p id="text_center">
-              <spam id="text_center">
-                <%= f.collection_check_boxes :category_ids, @categories.order(:name), :id, :name %>
+              <spam>
+                <%= f.collection_check_boxes :category_ids, @categories, :id, :name %>
               </spam>
             </p>
         </div>
