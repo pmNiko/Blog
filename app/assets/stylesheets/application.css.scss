@@ -37,6 +37,21 @@
     line-height: 150%;
     font-size: 1em;
 }
+#box1{
+  float: right;
+}
+#box2{
+  float: left;
+}
+#box3{
+  width: 45%;
+    margin: 0 auto;
+}
+a:link
+{
+ text-decoration:none;
+}
+
 
 @media only screen and (max-width: 980px) and (min-width: 780px) {
 

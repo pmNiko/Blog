@@ -53,13 +53,17 @@
       </div>
 
       <ul class="nav nav-pills">
-        <li>
-          <%= f.submit 'Ready', :class => 'btn btn-sm btn-success'%>
-        </li>
+        <div id="box1">
+          <li>
+            <%= f.submit 'Ready', :class => 'btn btn-sm btn-success'%>
+          </li>
+        </div>
     <% end %>
-        <li>
-          <%= button_to "Back", articles_path,
-          :class => "btn btn-sm btn-primary", :method => :get %>
-        </li>
+        <div id="box2">
+          <li>
+            <%= button_to "Back", articles_path,
+            :class => "btn btn-sm btn-primary", :method => :get %>
+          </li>
+        </div>
       </ul>
 </div>

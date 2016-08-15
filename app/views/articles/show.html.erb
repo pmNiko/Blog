@@ -26,21 +26,21 @@
     </div>
     <ul class="nav nav-pills">
       <% if policy(@article).edit? %>
-        <li>
+        <li id="box1">
           <%= button_to "Edit", edit_article_path(@article),
           :class => "btn btn-sm btn-warning", :method => :get %>
         </li>
       <% end %>
-        <% if policy(@article).destroy? %>
-          <li>
-            <%= button_to "Delete", article_path(@article),
-            :class => "btn btn-sm btn-danger", :method => :delete %>
-          </li>
-        <% end %>
-        <li>
-          <%= button_to "Back", articles_path,
-          :class => "btn btn-sm btn-primary", :method => :get %>
+      <li id="box3">
+        <%= button_to "Back", articles_path,
+        :class => "btn btn-sm btn-primary", :method => :get %>
+      </li>
+      <% if policy(@article).destroy? %>
+        <li id="box2">
+          <%= button_to "Delete", article_path(@article),
+          :class => "btn btn-sm btn-danger", :method => :delete %>
         </li>
+      <% end %>
     </ul>
 
   </div>
