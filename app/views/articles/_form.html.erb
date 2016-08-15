@@ -52,20 +52,8 @@
               data: {toggle: "tooltip", placement: "left" }, title: "Debera Ingresar al menos 5 letras!" %>
           </div>
         </div>
+          <%= f.button :Ready, :class => 'btn btn-sm btn-success', :id => 'pos_rigth'%>
+        <% end %>
+        <%= button_to "Back", articles_path, :class => "btn btn-sm btn-primary", :method => :get, :id => 'pos_left' %>
       </div>
-
-      <ul class="nav nav-pills">
-        <div id="box1">
-          <li>
-            <%= f.submit 'Ready', :class => 'btn btn-sm btn-success'%>
-          </li>
-        </div>
-    <% end %>
-        <div id="box2">
-          <li>
-            <%= button_to "Back", articles_path,
-            :class => "btn btn-sm btn-primary", :method => :get %>
-          </li>
-        </div>
-      </ul>
 </div>

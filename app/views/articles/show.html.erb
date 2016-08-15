@@ -3,9 +3,17 @@
 
   </div>
   <div class="col-xs-12 col-md-8 ">
+
     <h1 id="text_center"> <%= @article.title %> </h1>
 
     <div class="panel panel-default">
+      <% if policy(@article).destroy? %>
+
+          <%= button_to "Delete", article_path(@article),
+          :class => "btn btn-sm btn-danger", :method => :delete, :id => 'pos_rigth'  %>
+
+      <% end %>
+
       <div class="panel-heading">
         <% @article.categories.each do |category| %>
         <span class="label label-info">
@@ -17,36 +25,18 @@
 
       <div class="panel-body">
         <h5 id="text_center"> By <%= @article.author.email %></h5>
-
         <p>
           <strong> Text: </strong>
           <%= @article.text %>
         </p>
       </div>
-    </div>
-    <ul class="nav nav-pills">
-      <% if policy(@article).edit? %>
-        <li id="box1">
-          <%= button_to "Edit", edit_article_path(@article),
-          :class => "btn btn-sm btn-warning", :method => :get %>
-        </li>
-      <% end %>
-      <li id="box2">
-        <%= button_to "Back", articles_path,
-        :class => "btn btn-sm btn-primary", :method => :get %>
-      </li>
-      <div class="col-xs-12 col-md-12">
-        <div class="col-xs-3 col-md-5"></div>
-        <div class="col-xs-6 col-md-3" id="box3">
-          <% if policy(@article).destroy? %>
-          <li>
-            <%= button_to "Delete", article_path(@article),
-            :class => "btn btn-sm btn-danger", :method => :delete %>
-          </li>
-          <% end %>
-        </div>
-      </div>
-    </ul>
+      <%= button_to "Back", articles_path,
+      :class => "btn btn-sm btn-primary", :method => :get, :id => 'pos_left'  %>
 
+      <% if policy(@article).edit? %>
+      <%= button_to "Edit", edit_article_path(@article),
+      :class => "btn btn-sm btn-warning", :method => :get, :id => 'pos_rigth' %>
+      <% end %>
+    </div>
   </div>
 </div>

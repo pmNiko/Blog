@@ -37,23 +37,12 @@
     line-height: 150%;
     font-size: 1em;
 }
-#box1{
+
+#pos_rigth {
   float: right;
 }
-#box1 input{
-  width: 5em;
-}
-
-#box2{
+#pos_left{
   float: left;
-}
-#box2 input{
-  width: 5em;
-}
-
-
-#box3 input{
-  width: 10em;
 }
 
 a:link
@@ -63,23 +52,10 @@ a:link
 
 
 @media only screen and (max-width: 980px) and (min-width: 480px) {
-  #box3{
-    float: left;
-    margin-left: 10%;
-  }
-  #box3 input{
-    margin-top: 2em;
-  }
+
 }
 @media only screen and (max-width: 479px) and (min-width: 100px) {
-  #box3{
-    float: left;
-    margin-left: 30%;
-  }
-  #box3 input{
-    width: 7em;
-    margin-top: 2em;
-  }
+
 }
 
 /* Para 800px */
