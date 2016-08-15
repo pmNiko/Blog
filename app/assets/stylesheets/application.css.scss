@@ -40,22 +40,46 @@
 #box1{
   float: right;
 }
+#box1 input{
+  width: 5em;
+}
+
 #box2{
   float: left;
 }
-#box3{
-  width: 45%;
-    margin: 0 auto;
+#box2 input{
+  width: 5em;
 }
+
+
+#box3 input{
+  width: 10em;
+}
+
 a:link
 {
  text-decoration:none;
 }
 
 
-@media only screen and (max-width: 980px) and (min-width: 780px) {
-
-
+@media only screen and (max-width: 980px) and (min-width: 480px) {
+  #box3{
+    float: left;
+    margin-left: 10%;
+  }
+  #box3 input{
+    margin-top: 2em;
+  }
+}
+@media only screen and (max-width: 479px) and (min-width: 100px) {
+  #box3{
+    float: left;
+    margin-left: 0px;
+  }
+  #box3 input{
+    width: 7em;
+    margin-top: 2em;
+  }
 }
 
 /* Para 800px */

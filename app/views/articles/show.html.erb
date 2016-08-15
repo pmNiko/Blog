@@ -31,16 +31,21 @@
           :class => "btn btn-sm btn-warning", :method => :get %>
         </li>
       <% end %>
-      <li id="box3">
+      <li id="box2">
         <%= button_to "Back", articles_path,
         :class => "btn btn-sm btn-primary", :method => :get %>
       </li>
-      <% if policy(@article).destroy? %>
-        <li id="box2">
-          <%= button_to "Delete", article_path(@article),
-          :class => "btn btn-sm btn-danger", :method => :delete %>
-        </li>
-      <% end %>
+      <div class="col-xs-12 col-md-12">
+        <div class="col-xs-4 col-md-5"></div>
+        <div class="col-xs-3 col-md-3" id="box3">
+          <% if policy(@article).destroy? %>
+          <li>
+            <%= button_to "Delete", article_path(@article),
+            :class => "btn btn-sm btn-danger", :method => :delete %>
+          </li>
+          <% end %>
+        </div>
+      </div>
     </ul>
 
   </div>
