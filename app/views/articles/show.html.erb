@@ -6,13 +6,11 @@
 
     <h1 id="text_center"> <%= @article.title %> </h1>
 
-    <div class="panel panel-default">
-      <% if policy(@article).destroy? %>
-
-          <%= button_to "Delete", article_path(@article),
-          :class => "btn btn-sm btn-danger", :method => :delete, :id => 'pos_rigth'  %>
-
-      <% end %>
+    <% if policy(@article).destroy? %>
+      <%= button_to "Delete", article_path(@article),
+      :class => "btn btn-sm btn-danger", :method => :delete, :id => 'pos_rigth' %>
+    <% end %>
+    <div class="panel panel-default" id="enter">
 
       <div class="panel-heading">
         <% @article.categories.each do |category| %>
