@@ -27,6 +27,7 @@ group :development, :test do
   gem 'thor'
   gem 'better_errors' #Gem for better error page
   gem 'binding_of_caller'
+  gem 'rspec-rails', '~> 3.0'
 end
 
 # Add support for the MySQL
