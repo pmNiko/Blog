@@ -1,15 +1,11 @@
 mysql: &mysql
   adapter: mysql2
-  database: blog
+  database: "<%=ENV['OPENSHIFT_APP_NAME']%>"
   username: "<%=ENV['OPENSHIFT_MYSQL_DB_USERNAME']%>"
   password: "<%=ENV['OPENSHIFT_MYSQL_DB_PASSWORD']%>"
   host:     <%=ENV['OPENSHIFT_MYSQL_DB_HOST']%>
   port:     <%=ENV['OPENSHIFT_MYSQL_DB_PORT']%>
-  #Descomentar y comentar para ejecutar entorno de manera local
-  #username: "<%=ENV["MYSQL_DB_USERNAME"] %>"
-  #password: "<%=ENV["MYSQL_DB_PASSWORD"] %>"
-  #host: localhost
-  #port: 3000
+
 
 defaults: &defaults
   pool: 5
@@ -18,22 +14,27 @@ defaults: &defaults
   <<: *<%= ENV['RAILS_DB'] || "mysql" %>
 
 development:
-    pool: 5
-    timeout: 5000
-    encoding: utf8
-    adapter: mysql2
-    database: blog
-    #Configurar tu nombre de usuario y password en el bashrc
-    # sudo atom ~/.bashrc
-    # export MYSQL_DB_USERNAME="username"
-    # export MYSQL_DB_PASSWORD="password"
-    username: "<%=ENV["MYSQL_DB_USERNAME"] %>"
-    password: "<%=ENV["MYSQL_DB_PASSWORD"] %>"
-    host: localhost
-    port: 3000
+  pool: 5
+  timeout: 5000
+  encoding: utf8
+  adapter: mysql2
+  database: blog
+  username: "<%=ENV["MYSQL_DB_USERNAME"] %>"
+  password: "<%=ENV["MYSQL_DB_PASSWORD"] %>"
+  host: localhost
+  port: 3000
+
 
 test: &test
-  <<: *defaults
+  pool: 5
+  timeout: 5000
+  encoding: utf8
+  adapter: mysql2
+  database: test.blog
+  username: "<%=ENV["MYSQL_DB_USERNAME"] %>"
+  password: "<%=ENV["MYSQL_DB_PASSWORD"] %>"
+  host: localhost
+  port: 3000
 
 production:
   <<: *defaults
