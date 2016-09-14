@@ -19,6 +19,7 @@ development:
   encoding: utf8
   adapter: mysql2
   database: blog
+  socket: /tmp/mysql.sock
   username: "<%=ENV["MYSQL_DB_USERNAME"] %>"
   password: "<%=ENV["MYSQL_DB_PASSWORD"] %>"
   host: localhost
