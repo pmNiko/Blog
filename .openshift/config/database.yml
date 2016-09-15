@@ -25,6 +25,7 @@ development:
   host: localhost
   port: 3000
 
+
 test: &test
   pool: 5
   timeout: 5000
@@ -36,13 +37,5 @@ test: &test
   host: localhost
   port: 3000
 
-production: &production
-  pool: 5
-  timeout: 5000
-  encoding: utf8
-  adapter: mysql2
-  database: production.blog
-  username: "<%=ENV["MYSQL_DB_USERNAME"] %>"
-  password: "<%=ENV["MYSQL_DB_PASSWORD"] %>"
-  host: localhost
-  port: 3000
+production:
+  <<: *defaults
