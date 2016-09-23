@@ -5,6 +5,8 @@ gem 'devise', '~> 3.5.6'
 gem 'rails_admin', '~> 0.8.1'
 gem 'rolify', '~> 5.1'
 gem 'pundit', '~> 1.1.0'
+gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-bootstrap', '~> 1.0.1'
 #add stylesheets of the app
 gem 'bootstrap-sass'
 ### OpenShift Online changes:

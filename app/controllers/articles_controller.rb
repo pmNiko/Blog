@@ -3,8 +3,7 @@ class ArticlesController < ApplicationController
   def index
     authorize Article
     @articles = Article
-        .all
-        .limit(10)
+        .paginate(:page => params[:page], :per_page => 5)
         .order(created_at: :desc)
   end
 

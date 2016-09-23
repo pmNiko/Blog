@@ -20,7 +20,7 @@ Category.create!(name: 'Inforrmation')
 Category.create!(name: 'News')
 Category.create!(name: 'Notice')
 
-for i in 1..2
+for i in 1..10
   Article.create!({
     title: "Post number #{i}",
     text: "My #{i} post!",
