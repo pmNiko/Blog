@@ -13,8 +13,8 @@
         </div>
       <%end%>
       <div class="btn-group" role="group" style="margin-top:20px;">
-        <%= link_to "Title", params.merge{:sort => "title", :page => nil}, :class => "btn btn-default"%>
-        <%= link_to "Creation date", params.merge{:sort => "created_at", :page => nil}, :class => "btn btn-default"%>
+        <%= link_to "Title", params.merge(:sort => "title", :page => nil), :class => "btn btn-default"%>
+        <%= link_to "Creation date", params.merge(:sort => "created_at", :page => nil), :class => "btn btn-default"%>
       </div>
 
 

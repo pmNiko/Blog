@@ -4,4 +4,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :articles
   root "articles#index"
+
+  get '/profile/edit', to:'profiles#edit',
+      as: 'edit_profile'
+  patch '/profile', to:'profiles#update'
 end
