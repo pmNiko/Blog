@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :articles, foreign_key: "author_id"
 
   has_one :profile, :dependent => :destroy
-
+  accepts_nested_attributes_for :profile
   after_create :create_profile
 
   def create_profile
