@@ -6,11 +6,16 @@
       <h1 id="text_center">Articulos</h1>
 
       <%= form_tag articles_path, :method => 'get', class:'form-inline' do%>
+        <%= hidden_field_tag :sort, params[:sort] %>
         <div class="form-group">
           <%= text_field_tag :search, params[:search], class: 'form-control'%>
           <%= submit_tag "Search", :name => nil, class: 'btn btn-primary'%>
         </div>
       <%end%>
+      <div class="btn-group" role="group" style="margin-top:20px;">
+        <%= link_to "Title", params.merge{:sort => "title", :page => nil}, :class => "btn btn-default"%>
+        <%= link_to "Creation date", params.merge{:sort => "created_at", :page => nil}, :class => "btn btn-default"%>
+      </div>
 
 
       <% if policy(Article).new? %>
@@ -50,6 +55,10 @@
           </div>
         <% end %>
       <% end %>
-      <%= will_paginate @articles, renderer: BootstrapPagination::Rails %>
+
+      <div>
+        <%= will_paginate @articles, renderer: BootstrapPagination::Rails %>
+      </div>
+
     </div>
   </div>
