@@ -4,9 +4,14 @@ class ProfilesController < ApplicationController
   def edit
     @profile = current_user.profile
     authorize @profile
+    if @profile.phones.empty?
+      @profile.phones << Phone.new(
+	phone_type: 'Movile',
+	number: '(011) 154789345634')
+    end		
   end
 
-  def Update
+  def update
     @profile = current_user.profile
     authorize @profile
     @profile.update!(profile_params)
@@ -17,6 +22,14 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:first_name, :last_name, :date_of_birth)
+    params.require(:profile).permit(
+	:first_name, 
+	:last_name, 
+	:date_of_birth,
+	phones_attributes: [
+	  :id,
+	  :phone_type,
+	  :number
+	])
   end
 end

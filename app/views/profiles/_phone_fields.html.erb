@@ -1,0 +1,14 @@
+<div class="form-inline">
+  <div class="form-group">
+    <%= f.label :phone_type%>
+    <%= f.select(:phone_type,
+                ['Movile', 'Work', 'Home'],
+                {},
+                {:class => 'form-control'}) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :number %>
+    <%= f.text_field :number, class: 'form-control' %>
+  </div>
+
+</div>

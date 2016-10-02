@@ -11,6 +11,17 @@
     <%= f.label :date_of_birth%>
     <%= f.text_field :date_of_birth, class: 'form-control' %>
   </div>
+
+  <div class="panel panel-default">
+  	<div class="panel-heading">
+	    <h3 class="panel-title">Phones</h3>
+	</div>
+	<div class="panel-body">
+	    <%= f.fields_for :phones do | form_builder | %>
+	      <%= render "phone_fields", :f => form_builder %>
+	    <% end %>
+	</div>
+  </div>
   <p>
     <%= f.submit 'Update', :class => 'btn btn-primary' %>
   </p>
